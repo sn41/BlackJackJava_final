@@ -10,47 +10,7 @@ public class Main {
 //        Card.draw("♦"," 8");
         
         Deck deck = new Deck();
-        Card[] cards = {
-                new Card("♠", " 6"),
-                new Card("♠", " 7"),
-                new Card("♠", " 8"),
-                new Card("♠", " 9"),
-                new Card("♠", "10"),
-                new Card("♠", " В"),
-                new Card("♠", " Д"),
-                new Card("♠", " К"),
-                new Card("♠", " Т"),
-                new Card("♣", " 6"),
-                new Card("♣", " 7"),
-                new Card("♣", " 8"),
-                new Card("♣", " 9"),
-                new Card("♣", "10"),
-                new Card("♣", " В"),
-                new Card("♣", " Д"),
-                new Card("♣", " К"),
-                new Card("♣", " Т"),
-                new Card("♦", " 6"),
-                new Card("♦", " 7"),
-                new Card("♦", " 8"),
-                new Card("♦", " 9"),
-                new Card("♦", "10"),
-                new Card("♦", " В"),
-                new Card("♦", " Д"),
-                new Card("♦", " К"),
-                new Card("♦", " Т"),
-                new Card("♥", " 6"),
-                new Card("♥", " 7"),
-                new Card("♥", " 8"),
-                new Card("♥", " 9"),
-                new Card("♥", "10"),
-                new Card("♥", " В"),
-                new Card("♥", " Д"),
-                new Card("♥", " К"),
-                new Card("♥", " Т"),
-        };
-
-        int id = deck.get();
-        Card card = cards[id];
+        Card card = deck.getCard();
         card.draw();
     }
 

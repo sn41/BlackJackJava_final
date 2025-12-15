@@ -20,4 +20,51 @@ public class Deck {
             }
         }
     }
+
+    Card getCard(){
+        int id = get();
+        Card card = cards[id];
+        return card;
+    }
+
+    private Card[] cards = {
+            new Card("♠", " 6"),
+            new Card("♠", " 7"),
+            new Card("♠", " 8"),
+            new Card("♠", " 9"),
+            new Card("♠", "10"),
+            new Card("♠", " В"),
+            new Card("♠", " Д"),
+            new Card("♠", " К"),
+            new Card("♠", " Т"),
+            new Card("♣", " 6"),
+            new Card("♣", " 7"),
+            new Card("♣", " 8"),
+            new Card("♣", " 9"),
+            new Card("♣", "10"),
+            new Card("♣", " В"),
+            new Card("♣", " Д"),
+            new Card("♣", " К"),
+            new Card("♣", " Т"),
+            new Card("♦", " 6"),
+            new Card("♦", " 7"),
+            new Card("♦", " 8"),
+            new Card("♦", " 9"),
+            new Card("♦", "10"),
+            new Card("♦", " В"),
+            new Card("♦", " Д"),
+            new Card("♦", " К"),
+            new Card("♦", " Т"),
+            new Card("♥", " 6"),
+            new Card("♥", " 7"),
+            new Card("♥", " 8"),
+            new Card("♥", " 9"),
+            new Card("♥", "10"),
+            new Card("♥", " В"),
+            new Card("♥", " Д"),
+            new Card("♥", " К"),
+            new Card("♥", " Т"),
+    };
+
+
 }
