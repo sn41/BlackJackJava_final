@@ -1,10 +1,14 @@
 public class Card {
     String suit;
     String name;
-    Card(String suit, String name){
+    int points;
+
+    Card(String suit, String name, int points){
         this.suit = suit;
         this.name = name;
+        this.points = points;
     }
+
     public void draw() {
         String d = name;
         String m = suit;
