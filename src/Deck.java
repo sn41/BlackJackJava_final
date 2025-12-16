@@ -68,18 +68,18 @@ public class Deck {
 
     Card getCard() {
         int cardId = getId();
-        int cardSuiteId = cardId / 9;
+        int cardSuitId = cardId / 9;
 
-        String cardSuite = switch (cardSuiteId) {
+        String cardSuit = switch (cardSuitId) {
             case 0 -> "♠";
             case 1 -> "♣";
             case 2 -> "♦";
             default -> "♥";
         };
 
-        int cardValueId = cardId % 9;
+        int cardRankId = cardId % 9;
 
-        String cardValue = switch (cardValueId) {
+        String cardRank = switch (cardRankId) {
             case 0 -> " 6";
             case 1 -> " 7";
             case 2 -> " 8";
@@ -96,7 +96,7 @@ public class Deck {
 
         int cardPointsId = cardId % 9;
 
-        String cardPoints = switch (cardValueId) {
+        String cardPoints = switch (cardRankId) {
             case 0 -> " 6";
             case 1 -> " 7";
             case 2 -> " 8";
@@ -109,7 +109,7 @@ public class Deck {
         };
 
 
-        Card card = new Card(cardSuite, cardValue, cardPoints);
+        Card card = new Card(cardSuit, cardRank, cardPoints);
 
         // todo Найти ошибки и исправить (Конец)
 
