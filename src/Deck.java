@@ -66,6 +66,8 @@ public class Deck {
             new Card("♥", " Т", 1),
     };*/
 
+    // todo вынести получение масти, ранга и очков карты в отдельные функции
+
     Card getCard() {
         int cardId = getId();
         int cardSuitId = cardId / 9;
