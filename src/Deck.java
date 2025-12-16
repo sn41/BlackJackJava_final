@@ -79,6 +79,7 @@ public class Deck {
             default -> "♥";
         };
 
+        // todo Упростить (Начало)
         int cardRankId = cardId % 9;
 
         String cardRank = switch (cardRankId) {
@@ -114,6 +115,8 @@ public class Deck {
         Card card = new Card(cardSuit, cardRank, cardPoints);
 
         // todo Найти ошибки и исправить (Конец)
+
+        // todo Упростить (Конец)
 
         return card;
     }
