@@ -66,23 +66,51 @@ public class Deck {
             new Card("♥", " Т", 1),
     };*/
 
-    // todo вынести получение масти, ранга и очков карты в отдельные функции
 
     Card getCard() {
         int cardId = getId();
-        int cardSuitId = cardId / 9;
 
+        String cardSuit = getSuit(cardId);
+
+        String cardRank = getRank(cardId);
+
+        int cardPoints = getCardPoints(cardId);
+
+        Card card = new Card(cardSuit, cardRank, cardPoints);
+
+        return card;
+    }
+
+    private static int getCardPoints(int cardId) {
+        int cardPointsId = cardId % 9;
+        int cardPoints = switch (cardPointsId) {
+            case 0 -> 6;
+            case 1 -> 7;
+            case 2 -> 8;
+            case 3 -> 9;
+            case 4 -> 10;
+            case 5 -> 1;
+            case 6 -> 2;
+            case 7 -> 3;
+            default -> 4;
+        };
+        return cardPoints;
+    }
+
+    private static String getSuit(int cardId) {
+        int cardSuitId = cardId / 9;
         String cardSuit = switch (cardSuitId) {
             case 0 -> "♠";
             case 1 -> "♣";
             case 2 -> "♦";
             default -> "♥";
         };
+        return cardSuit;
+    }
 
-        // todo Упростить (Начало)
-        int cardRankId = cardId % 9;
-
-        String cardRank = switch (cardRankId) {
+    private static String getRank(int cardId) {
+        int rankId = cardId % 9;
+        String cardRank = switch (rankId) {
             case 0 -> " 6";
             case 1 -> " 7";
             case 2 -> " 8";
@@ -93,32 +121,7 @@ public class Deck {
             case 7 -> " Д";
             default -> " К";
         };
-
-
-        // todo Найти ошибки и исправить (Начало)
-
-        int cardPointsId = cardId % 9;
-
-        String cardPoints = switch (cardRankId) {
-            case 0 -> " 6";
-            case 1 -> " 7";
-            case 2 -> " 8";
-            case 3 -> " 9";
-            case 4 -> "10";
-            case 5 -> " 1";
-            case 6 -> " 2";
-            case 7 -> " 3";
-            default -> " 4";
-        };
-
-
-        Card card = new Card(cardSuit, cardRank, cardPoints);
-
-        // todo Найти ошибки и исправить (Конец)
-
-        // todo Упростить (Конец)
-
-        return card;
+        return cardRank;
     }
 
 

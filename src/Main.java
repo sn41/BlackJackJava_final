@@ -1,12 +1,52 @@
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         /*Deck deck = new Deck();
         Card card = deck.getCard();
         int points = card.points;
         card.draw();*/
 
-        //todo Реализовать алгоритм представленный в файле "Блок_схема.md"
+        Deck deck = new Deck();
+        Scanner s = new Scanner(System.in);
+        int total = 0;
 
+        int points = getCard(deck);
+        total += points;
+
+        while (true) {
+            points = getCard(deck);
+            total += points;
+            if (total > 20) {
+                break;
+            } else {
+                System.out.println("ЕЩЁ?");
+                char answer = s.nextLine().toLowerCase().charAt(0);
+                if (answer != 'y') {
+                    break;
+                } else {
+                    clearScreen();
+                }
+            }
+        }
+
+        clearScreen();
+
+        if (total == 21) {
+            System.out.println("Вы выиграли!");
+        } else if (total > 21) {
+            System.out.println("Вы проиграли!");
+        } else {
+            System.out.println("Ваши очки = " + total);
+        }
+
+
+    }
+
+    private static int getCard(Deck deck) {
+        Card currentCard = deck.getCard();
+        currentCard.draw();
+        return currentCard.points;
     }
 
 
